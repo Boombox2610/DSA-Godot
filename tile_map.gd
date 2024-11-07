@@ -10,10 +10,11 @@ func _ready() -> void:
 	
 	
 	astar.region = map_rect
+	print("map_rect astar region: ", astar.region)
 	var tile_size = get_tileset().tile_size
 	astar.cell_size = tile_size
-	astar.default_compute_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
-	astar.default_estimate_heuristic = AStarGrid2D.HEURISTIC_MANHATTAN
+	astar.default_compute_heuristic = AStarGrid2D.HEURISTIC_EUCLIDEAN
+	astar.default_estimate_heuristic = AStarGrid2D.HEURISTIC_EUCLIDEAN
 	astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	astar.update()
 	
