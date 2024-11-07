@@ -34,8 +34,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			current_path = tilemap.astar.get_id_path(
 				tilemap.local_to_map(global_position),
 				tilemap.local_to_map(click_position)
-			).slice(1)
-			print(current_path)
+			)
+			print("To location: ", tilemap.local_to_map(click_position))
+			print("Path: ",current_path)
 			update_debug_path()
 
 func update_debug_path() -> void:
